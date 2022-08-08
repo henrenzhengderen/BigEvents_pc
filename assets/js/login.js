@@ -64,15 +64,16 @@ $('#form_login').on('submit',(function (e) {
         url: '/api/login',
         // 快速获取表单中的数据
         data: $(this).serialize(),
-        success : res => {
+        success: res => {
             if(res.status !== 0) {
                 return layer.msg('登录失败！')
             }
             layer.msg('登录成功！')
+            layer.msg('登录成功！')
             // 将登录成功得到的token字符串，保存包localStorage中
             localStorage.setItem('token', res.token)
             // 跳转到后台主页
-            location.href = '/index.html'
+            location.href = '/BigEvents_pc/index.html?_ijt=l72k69ubqga0099viv8ljehu2u&_ij_reload=RELOAD_ON_SAVE'
         }
     })
 }))
